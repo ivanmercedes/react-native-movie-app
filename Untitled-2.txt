@@ -1,0 +1,37 @@
+https://us.puma.com/en/us/men/shoes/lifestyle/lows
+https://www.hipoptical.com/products/shimer-men?variant=31929200541799
+
+<i class="far fa-calendar-check"></i>
+<i class="fas fa-dollar-sign"></i>
+<i class="fas fa-history"></i>
+<i class="fas fa-search-location"></i>
+https://dribbble.com/shots/15174993-Movie-App-Explploration/attachments/6915952?mode=media
+https://dribbble.com/shots/15596227-Movie-streaming-app/attachments/7383394?mode=media
+https://dribbble.com/shots/14791304-Movies-app-design
+https://developers.themoviedb.org/3/genres/get-movie-list
+https://youtu.be/2zXo1a2FbDQ?t=3550
+https://github.com/FaztTech/react-native-pexels-api/blob/main/components/ImageList.js
+https://icons.expo.fyi/EvilIcons/search
+https://morioh.com/p/9f2252833304
+https://github.com/meliorence/react-native-snap-carousel
+https://www.youtube.com/watch?v=FAMWIoKvfRs
+https://www.youtube.com/watch?v=sfmL6bGbiN8
+https://www.frontendmentor.io/challenges?sort=difficulty|asc
+https://freecoursesites.com/
+https://www.youtube.com/c/MoralisWeb3/videos
+https://www.youtube.com/watch?v=F7XN8CzdDPg
+
+https://phoenixnap.com/kb/install-docker-on-ubuntu-20-04
+https://davidyeiser.com/tutorials/docker-wordpress-theme-setup
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-es
+https://forums.docker.com/t/command-not-found-when-i-try-to-run-docker-compose/97183/2
+https://github.com/bigbluebutton/greenlight/issues/228
+https://phoenixnap.com/kb/install-docker-compose-on-ubuntu-20-04
+
+https://www.youtube.com/watch?v=d9-FNDUICZE
+https://www.youtube.com/watch?v=ElgfjrWn7Mg
+https://www.youtube.com/watch?v=R7qK1KKX0rE
+
+https://tincode.es/cursos/
+
+
