@@ -1,12 +1,10 @@
-import React, { useRef, useState, useEffect,useCallback } from "react";
-import { Dimensions, StyleSheet, View, Button } from "react-native";
+import React, { useRef, useState, useEffect, useCallback } from "react";
+import { Dimensions, StyleSheet, View } from "react-native";
 import * as ScreenOrientation from "expo-screen-orientation";
-import { Video } from "expo-av";
 import YoutubePlayer from "react-native-youtube-iframe";
 
 const VIDEO_WIDTH = Dimensions.get("window").height;
 const VIDEO_HEIGHT = Dimensions.get("window").width;
-console.log(VIDEO_WIDTH, VIDEO_HEIGHT);
 const VideoPlayer = () => {
   const video = useRef(null);
   const [status, setStatus] = useState({});

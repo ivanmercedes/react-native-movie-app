@@ -11,6 +11,7 @@ import globalStyles from "../../../style/globalStyles";
 import styles from "./styles";
 
 const MovieScreen = ({ route, navigation }) => {
+  console.log(route.params.item);
   const {
     id,
     original_title,
@@ -46,7 +47,6 @@ const MovieScreen = ({ route, navigation }) => {
       );
     };
     onMount();
-
   }, []);
 
   return (
