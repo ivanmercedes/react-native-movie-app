@@ -1,10 +1,11 @@
 import axios from "axios";
+import { API_KEY, API_URL } from "@env";
 
 const axiosClient = axios.create({
-  baseURL: "https://api.themoviedb.org/3/",
+  baseURL: API_URL,
   params: {
-    api_key: "f7e267150c4eb4bd6a147dd50a8a749a",
-    language: 'en-US'
+    api_key: API_KEY,
+    language: "en-US",
   },
 });
 
@@ -17,14 +18,13 @@ export const getTrending = async () => {
     upcoming: res[0].data.results,
     trendingWeek: res[1].data.results,
   };
-  // await axiosClient.get(trendingWeek);
 };
 
 export const getMovies = (searchTerm) => {};
 
 export const getMovie = (movie_id) => {};
 
-export const getCast = async (movie_id, media_type = 'movie') => {
+export const getCast = async (movie_id, media_type = "movie") => {
   const cast = await axiosClient.get(`/${media_type}/${movie_id}/credits`);
   return cast.data.cast;
 };

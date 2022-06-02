@@ -79,7 +79,7 @@ const MovieList = ({ movies, title, navigation, route }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    marginTop: 20,
+    marginTop: 2,
   },
   containerFlex: {
     flexDirection: "row",

@@ -5,7 +5,6 @@ import MovieList from "../../components/MovieList";
 import SliderHome from "../../components/SliderHome";
 import globalStyles from "../../../style/globalStyles";
 
-
 const HomeScreen = ({ navigation, route }) => {
   const [trending, setTrending] = useState([]);
   const [upComing, setUpComing] = useState([]);
@@ -22,7 +21,7 @@ const HomeScreen = ({ navigation, route }) => {
 
   return (
     <ScrollView style={globalStyles.bg}>
-      <SliderHome movies={upComing} />
+      <SliderHome movies={upComing} navigation={navigation} />
       <View style={{ flex: 1 }}>
         <MovieList
           navigation={navigation}

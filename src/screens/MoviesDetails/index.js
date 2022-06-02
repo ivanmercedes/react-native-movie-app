@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, ScrollView } from "react-native";
-import { Chip, Tile, Avatar, ListItem } from "react-native-elements";
+import { Chip, Tile } from "react-native-elements";
+import { LinearGradient } from "expo-linear-gradient";
+import * as ScreenOrientation from "expo-screen-orientation";
 
 import { getCast } from "../../api/tmdb";
+import ActorList from "../../components/ActorList";
 
 import globalStyles from "../../../style/globalStyles";
 import styles from "./styles";
-import { LinearGradient } from "expo-linear-gradient";
-import ActorList from "../../components/ActorList";
 
-const MovieScreen = ({ route }) => {
-   console.log(route.params.item)
+const MovieScreen = ({ route, navigation }) => {
   const {
     id,
     original_title,
@@ -20,7 +20,7 @@ const MovieScreen = ({ route }) => {
     vote_average,
     release_date,
     first_air_date,
-    media_type
+    media_type,
   } = route.params.item;
 
   const [cast, setCast] = useState([]);
@@ -29,25 +29,32 @@ const MovieScreen = ({ route }) => {
     const castResult = await getCast(id, media_type);
     // console.log(castResult);
 
-    const actor = castResult.filter(cast => cast.known_for_department == "Acting");
+    const actor = castResult.filter(
+      (cast) => cast.known_for_department == "Acting",
+    );
     setCast({
       ...cast,
-      actor
+      actor,
     });
-
-    
   };
 
   useEffect(() => {
-    loadingCast();
-    console.log(cast.actor)
+    const onMount = async () => {
+      await loadingCast();
+      await ScreenOrientation.lockAsync(
+        ScreenOrientation.OrientationLock.PORTRAIT,
+      );
+    };
+    onMount();
+
   }, []);
 
   return (
     <ScrollView style={globalStyles.bg}>
       <Tile
+        onPress={() => navigation.navigate("VideoPlayer")}
         style={{
-          marginBottom: 100000,
+          marginBottom: 0,
         }}
         icon={{
           backgroundColor: "red",
@@ -73,7 +80,7 @@ const MovieScreen = ({ route }) => {
           position: "absolute",
           left: 0,
           right: 0,
-          top: 230,
+          top: 240,
           height: 100,
           zindex: -1,
         }}
@@ -114,15 +121,7 @@ const MovieScreen = ({ route }) => {
         <Text style={styles.description}>{overview}</Text>
       </View>
 
-      <View>
-         
-        {cast.actor ? 
-          <ActorList actors={cast.actor} />
-        : null}
-       
-  
- 
-      </View>
+      <View>{cast.actor ? <ActorList actors={cast.actor} /> : null}</View>
     </ScrollView>
   );
 };

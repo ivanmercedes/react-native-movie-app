@@ -6,6 +6,7 @@ import {
   Dimensions,
   StyleSheet,
   Image,
+  TouchableWithoutFeedback,
 } from "react-native";
 import { Chip } from "react-native-elements";
 import Carousel from "react-native-snap-carousel";
@@ -16,23 +17,32 @@ import globalStyles from "../../style/globalStyles";
 const SLIDER_WIDTH = Dimensions.get("window").width + 100;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
 
-const SliderHome = ({ movies }) => {
+const SliderHome = ({ movies, navigation }) => {
   const isCarousel = React.useRef(null);
   const renderItem = ({ item, index }) => {
     return (
       <View style={styles.container} key={index}>
-        <Image
-          source={{
-            uri: `https://image.tmdb.org/t/p/w780/${item.poster_path}`,
-          }}
-          style={styles.image}
-        />
+        <TouchableWithoutFeedback
+          onPress={()=> navigation.navigate("MovieDetailsScreen", {
+            item,
+          })}
+        >
+          <Image
+            resizeMode="cover"
+            source={{
+              uri: `https://image.tmdb.org/t/p/w780/${item.poster_path}`,
+            }}
+            style={styles.image}
+          />
+        </TouchableWithoutFeedback>
+
         <View style={styles.header}>
           <View
             style={{
               flex: 1,
               flexDirection: "row",
               justifyContent: "center",
+              marginTop: 10,
             }}
           >
             <Chip
@@ -75,7 +85,7 @@ const SliderHome = ({ movies }) => {
     <SafeAreaView style={styles.containerSafe}>
       {movies.length > 0 ? (
         <Carousel
-          layout="stack"
+          layout="default"
           autoplay={true}
           loop={true}
           layoutCardOffset={9}
@@ -121,7 +131,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   container: {
-    backgroundColor: "#000000",
+    // backgroundColor: "#000000",
     overflow: "hidden",
     width: "100%",
     paddingBottom: 0,
